@@ -20,20 +20,22 @@ class Model(metaclass=ABCMeta):
         self.model = None
 
     @abstractmethod
-    def train(self, tr_x: pd.DataFrame, tr_y: pd.Series,
-                va_x: Optional[pd.DataFrame] = None,
-                va_y: Optional[pd.Series] = None) -> None:
+    def train(self,
+              tr_x: pd.DataFrame, tr_y: pd.Series,
+              va_x: Optional[pd.DataFrame] = None, va_y: Optional[pd.Series] = None) -> None:
         """モデルの学習を行い、学習済のモデルを保存する
-        tr_x: 学習データの特徴量
-        tr_y: 学習データの目的変数
-        va_x: バリデーションデータの特徴量
-        va_y: バリデーションデータの目的変数
+        Args:
+            tr_x: 学習データの特徴量
+            tr_y: 学習データの目的変数
+            va_x: バリデーションデータの特徴量
+            va_y: バリデーションデータの目的変数
+        バリデーションデータはlightgbmなどの学習時にバリデーションデータを使用するモデルの場合に使用(early stopping)
         """
         pass
 
     @abstractmethod
     def predict(self, te_x: pd.DataFrame) -> np.array:
-        """学習済のモデルでの予測値を返す、分類問題では確率を返す
+        """学習済のモデルでの予測値を返す
         :param te_x: バリデーションデータやテストデータの特徴量
         :return: 予測値(予測確率）
         """

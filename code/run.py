@@ -154,8 +154,7 @@ if __name__ == '__main__':
 ######## 学習・推論 ################################################
     # 使用する特徴量の指定
     # features_list.txtからコピペ、適宜取捨選択
-    features = [
-'ID',
+    features = ['ID',
 'OwnerID',
 'OwnerSince',
 'TimeToReply',
