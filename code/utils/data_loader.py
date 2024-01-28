@@ -1,6 +1,6 @@
 import pandas as pd
 import os
-from util.models import Dataset
+from utils.models import Dataset
 
 
 class DataLoader:

@@ -9,7 +9,7 @@ from util import Logger
 
 import xgboost as xgb
 from runner import Runner
-from util import Validation
+from utils import Validation
 
 sys.path.append(os.pardir)
 sys.path.append('../..')

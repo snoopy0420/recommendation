@@ -21,8 +21,11 @@ class Model(metaclass=ABCMeta):
 
     @abstractmethod
     def train(self,
-              tr_x: pd.DataFrame, tr_y: pd.Series,
-              va_x: Optional[pd.DataFrame] = None, va_y: Optional[pd.Series] = None) -> None:
+              tr_x: pd.DataFrame,
+              tr_y: Optional[pd.DataFrame] = None,
+              va_x: Optional[pd.DataFrame] = None,
+              va_y: Optional[pd.Series] = None
+            ) -> None:
         """モデルの学習を行い、学習済のモデルを保存する
         Args:
             tr_x: 学習データの特徴量
@@ -33,8 +36,7 @@ class Model(metaclass=ABCMeta):
         """
         pass
 
-    @abstractmethod
-    def predict(self, te_x: pd.DataFrame) -> np.array:
+    def predict(self, te_x: pd.DataFrame) -> list:
         """学習済のモデルでの予測値を返す
         :param te_x: バリデーションデータやテストデータの特徴量
         :return: 予測値(予測確率）
@@ -42,11 +44,17 @@ class Model(metaclass=ABCMeta):
         pass
 
     @abstractmethod
+    def recommend(self, list_user_id: list) -> pd.DataFrame:
+        """学習済のモデルでの予測値を返す
+        :param te_x: バリデーションデータやテストデータの特徴量
+        :return: 予測値(予測確率）
+        """
+        pass
+
     def save_model(self) -> None:
         """モデルの保存を行う"""
         pass
 
-    @abstractmethod
     def load_model(self) -> None:
         """モデルの読み込みを行う"""
         pass
