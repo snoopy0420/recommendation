@@ -98,6 +98,14 @@ class Model_iALS(Model):
         df_recomendations["recommends"] = self.dict_user2content.values()
 
         return df_recomendations
+    
+    def save_model(self) -> None:
+        """モデルの保存を行う"""
+        pass
+
+    def load_model(self) -> None:
+        """モデルの読み込みを行う"""
+        pass
 
 
     

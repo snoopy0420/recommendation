@@ -1,13 +1,16 @@
 # 概要
 
-※2023/10/02
-データサイエンスコンペ用パイプライン
-随時更新しコンペイ開始時に使用する
+## 環境構築
+conda create -n recommend python=3.7.3
+conda activate
+pip install -r requirements.txt
 
-## 環境
-python: 3.7.13
+pip install ipykernel 
+python -m ipykernel install --user --name recommend --display-name "recommend(Python3.7.3)"
+
 
 ## 実行
 ```sh
 python run.py
+
 ```

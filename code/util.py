@@ -5,7 +5,7 @@ import numpy as np
 import pandas as pd
 import yaml
 import joblib
-from sklearn.metrics import mean_absolute_percentage_error
+# from sklearn.metrics import mean_absolute_percentage_error
 from sklearn.model_selection import KFold, StratifiedKFold, GroupKFold
 
 
